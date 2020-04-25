@@ -32,6 +32,10 @@ class MainActivity : AppCompatActivity() {
             if (gameStart) {
                 drawCard()
             }
+            else if (nextBtn.text == "リセット") {
+                resultText.text = ""
+                onResume()
+            }
         }
     }
 
@@ -68,10 +72,12 @@ class MainActivity : AppCompatActivity() {
 
         if (hitCount == 5) {
             resultText.text = "あなたの勝ちです"
+            nextBtn.text = "リセット"
             gameStart = false
         }
         else if (loseCount == 5) {
             resultText.text = "あなたの負けです"
+            nextBtn.text = "リセット"
             gameStart = false
         }
         else {
